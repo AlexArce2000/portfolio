@@ -1,0 +1,176 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Sección de la portada */
+.hero {
+    background: #061930;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Estilo para los botones*/
+.hero .btn {
+    display: inline-block;
+    text-align: center;
+    background-color: #5a6aff; /* Color de fondo */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px; /* Tamaño consistente */
+    font-weight: bold;
+    border-radius: 5px;
+    width: 200px; /* Ancho fijo para ambos botones */
+    margin: 10px; /* Espacio entre los botones */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el hover */
+}
+
+.hero .btn:hover {
+    background-color: #9ba5ff; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+
+/* Sección de "Sobre mí" */
+#about {
+    text-align: center;
+    background-color: white;
+    padding: 50px 0;
+    text-align: left;
+}
+
+#about h2 {
+    text-align: center;
+}
+#about p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Sección de proyectos */
+#projects {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.project-card {
+    margin-bottom: 30px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+/* Sección de habilidades */
+#skills {
+    padding: 50px 0;
+}
+
+#skills ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#skills li {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #061930;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20;
+}
+
+nav .nav-btn {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav .nav-btn:hover {
+    background-color: #333;
+}
+
+/* Sección de contacto */
+#contact {
+    background-color: #061930;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact ul {
+    list-style-type: none;
+}
+
+#contact li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#contact a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #ff4500;
+}
+/* Estilo para el enlace "Volver arriba" */
+.back-to-top {
+    font-size: 1.2em;
+    color: #5a6aff;
+    padding: 20px 20px;
+}
+/* Ajustar el tamaño del ícono SVG dentro del botón */
+.back-to-top svg {
+    width: 30px;  /* Cambia el tamaño deseado */
+    height: 30px; /* Cambia el tamaño deseado */
+}
+
+.back-to-top:hover {
+    color: white;
+    background-color: #5a6aff;
+}
