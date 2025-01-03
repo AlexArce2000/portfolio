@@ -132,6 +132,38 @@ nav .nav-btn {
 nav .nav-btn:hover {
     background-color: #333;
 }
+/* Estilo para el botón GitHub */
+.btn-github {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    background-color: black;  /* Fondo negro */
+    color: white;             /* Texto blanco */
+    padding: 10px 20px;       /* Espaciado alrededor del texto */
+    font-size: 16px;          /* Tamaño del texto */
+    font-weight: bold;
+    text-decoration: none;    /* Elimina el subrayado del enlace */
+    border-radius: 5px;       /* Bordes redondeados */
+    margin-top: 15px;         /* Espacio arriba del botón */
+    border-radius: 5px;
+    width: 200px; /* Ancho fijo para ambos botones */
+    margin: 10px; /* Espacio entre los botones */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el hover */
+
+}
+
+
+/* Estilo para el ícono de GitHub */
+.btn-github svg {
+    fill: white;              /* El ícono será blanco */
+    width: 20px;              /* Tamaño del ícono */
+    height: 20px;             /* Tamaño del ícono */
+}
+
+/* Cambiar el color de fondo cuando se pasa el mouse sobre el botón */
+.btn-github:hover {
+    background-color: #333;  /* Fondo gris oscuro al pasar el mouse */
+}
 
 /* Sección de contacto */
 #contact {
