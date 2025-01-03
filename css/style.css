@@ -44,7 +44,7 @@ body {
     padding: 10px 20px; /* Tamaño consistente */
     font-weight: bold;
     border-radius: 5px;
-    width: 200px; /* Ancho fijo para ambos botones */
+    width: 200px; /* Ancho fijo */
     margin: 10px; /* Espacio entre los botones */
     transition: background-color 0.3s, transform 0.3s; /* Transiciones para el hover */
 }
@@ -53,7 +53,6 @@ body {
     background-color: #9ba5ff; /* Color de fondo al pasar el ratón */
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
 }
-
 
 /* Sección de "Sobre mí" */
 #about {
@@ -90,19 +89,46 @@ body {
 }
 
 /* Sección de habilidades */
-#skills {
-    padding: 50px 0;
+.skill-box {
+    border: 2px solid #333; /* Borde alrededor del cuadro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio alrededor del contenido */
+    text-align: center; /* Alinea el contenido al centro */
+    background-color: #f9f9f9; /* Color de fondo suave */
+    transition: all 0.3s ease; /* Efecto de transición */
+    width: 150px;
+    margin: 10px;
+    margin-bottom: 50px;
 }
-
-#skills ul {
-    list-style-type: none;
+#skills h2 {
+    padding-top: 50px;
     text-align: center;
+    margin-bottom: 25px;
+}
+/* Efecto de hover para cada skill */
+.skill-box:hover {
+    background-color: #e0e0e0; /* Cambia el fondo al pasar el ratón */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al pasar el ratón */
 }
 
-#skills li {
-    font-size: 1.2em;
-    margin: 5px 0;
+/* Estilo para los títulos */
+.skill-box b {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
+
+/* Estilo para las imágenes */
+.skill-box img {
+    margin-top: 5px; /* Espacio entre el texto y la imagen */
+    transition: transform 0.3s ease; /* Efecto de escala en la imagen */
+}
+
+.skill-box:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el ratón */
+}
+
+
 
 /* Navegación */
 nav {
@@ -137,9 +163,9 @@ nav .nav-btn:hover {
     display: inline-block;
     align-items: center;
     text-align: center;
-    background-color: black;  /* Fondo negro */
-    color: white;             /* Texto blanco */
-    padding: 10px 20px;       /* Espaciado alrededor del texto */
+    background-color: black;  
+    color: white;             
+    padding: 10px 20px;       
     font-size: 16px;          /* Tamaño del texto */
     font-weight: bold;
     text-decoration: none;    /* Elimina el subrayado del enlace */
@@ -173,36 +199,4 @@ nav .nav-btn:hover {
     text-align: center;
 }
 
-#contact ul {
-    list-style-type: none;
-}
 
-#contact li {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-#contact a {
-    color: #ff6347;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    color: #ff4500;
-}
-/* Estilo para el enlace "Volver arriba" */
-.back-to-top {
-    font-size: 1.2em;
-    color: #5a6aff;
-    padding: 20px 20px;
-}
-/* Ajustar el tamaño del ícono SVG dentro del botón */
-.back-to-top svg {
-    width: 30px;  /* Cambia el tamaño deseado */
-    height: 30px; /* Cambia el tamaño deseado */
-}
-
-.back-to-top:hover {
-    color: white;
-    background-color: #5a6aff;
-}
