@@ -132,20 +132,29 @@
     </section>
     <!-- Sección de Proyectos -->
     <section id="projects">
-        <div class="container">
-            <h2>Mis Proyectos</h2>
-            <div class="project-card">
-                <h3>Rediseño de Logo para XYZ Corp.</h3>
-                <p>Un proyecto donde creé un nuevo logo para XYZ, con un enfoque moderno y profesional.</p>
-                <img src="logo-xyz.png" alt="Logo XYZ">
+        <h2>Mis Proyectos</h2>
+        <!-- Contenedor principal de Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide project-card">
+                    <h3>CMS</h3>
+                    <p>Este proyecto es un Content Management System (CMS) desarrollado como parte de la materia Ingeniera de Software. El sistema permite gestionar contenidos de manera eficiente, proporcionando funcionalidades de administración, visualización y edición de datos a través de una interfaz amigable.</p>
+                    <a href='https://github.com/AlexArce2000/cms.git' target='_blank'><img src='https://i.postimg.cc/SNT6j6TQ/cms1.png' border='0' alt='cms1'/></a>
+                </div>
+                <div class="swiper-slide project-card">
+                    <h3>BookBase</h3>
+                    <p>Aplicación web que permite a los usuarios gestionar su colección de libros con facilidad. Desarrollada con Angular en el frontend y Spring Boot en el backend, ofrece todas las operaciones CRUD esenciales: crear, leer, actualizar y eliminar.</p>
+                    <a href='https://postimg.cc/N5NN0Sz1' target='_blank'><img src='https://i.postimg.cc/3xhztHjb/bookbase1.png' border='0' alt='bookbase1'/></a>
+                </div>
+                <!-- Puedes agregar más proyectos aquí -->
             </div>
-            <div class="project-card">
-                <h3>Sitio Web para Fundación ABC</h3>
-                <p>Desarrollé un sitio web responsivo para la Fundación ABC, con un diseño enfocado en la accesibilidad.</p>
-                <img src="sitio-web.png" alt="Sitio Web Fundación ABC">
-            </div>
+    
+            <!-- Agregar navegación (opcional) -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
+    
 
     <!-- Sección de Contacto -->
     <section id="contact">

@@ -71,21 +71,44 @@ body {
 }
 
 /* Sección de proyectos */
+/* Sección de proyectos */
 #projects {
     padding: 50px 0;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-.project-card {
-    margin-bottom: 30px;
+/* Contenedor principal de los proyectos */
+.swiper-wrapper {
+    display: flex; /* Esto coloca los proyectos en una fila */
+    justify-content: center; /* Centra los proyectos horizontalmente */
+    flex-wrap: wrap; /* Permite que los proyectos se ajusten a una nueva fila si no caben */
 }
 
+/* Cada tarjeta de proyecto */
+.project-card {
+    margin: 15px; 
+    flex: 1 1 300px; 
+    text-align: left; 
+    background-color: white;
+    border-radius: 8px; 
+    padding: 20px; /* Espacio interno dentro de la tarjeta */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
+}
+
+/* Estilo de las imágenes dentro de las tarjetas */
 .project-card img {
-    width: 100%;
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho de la tarjeta */
     height: auto;
-    max-width: 300px;
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
     margin-top: 10px;
+}
+
+/* Efecto hover para las tarjetas de proyectos */
+.project-card:hover {
+    background-color: #e0e0e0; /* Fondo suave al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el ratón */
 }
 
 /* Sección de habilidades */
