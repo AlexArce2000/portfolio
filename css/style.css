@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4;  
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 
 /* Sección de la portada */
 .hero {
-    background: #061930;
+    background: url(fondo.png),#061930;
     color: white;
     padding: 60px 0;
     text-align: center;
@@ -179,7 +179,7 @@ nav .nav-btn {
 }
 
 nav .nav-btn:hover {
-    background-color: #333;
+    background-color: #686868;
 }
 /* Estilo para el botón GitHub */
 .btn-github {
@@ -215,11 +215,20 @@ nav .nav-btn:hover {
 }
 
 /* Sección de contacto */
-#contact {
-    background-color: #061930;
+#contact{
+    background: url(fondo.png),#061930;
     color: white;
     padding: 50px 0;
     text-align: center;
 }
+#contact .btn {
+    display: inline-block;
+    padding: 10px; 
+    transition: all 0.3s ease;
+}
 
+#contact .btn:hover {
+    background-color: #f0f0f0; 
+    transform: scale(1.0); 
+}
 
