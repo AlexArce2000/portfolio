@@ -282,5 +282,114 @@ nav .nav-btn:hover {
     background-color: #788aff;
     transform: scale(1.05);
   }
-  
+/* --------------------- */
+/* ESTILOS RESPONSIVOS 📱 */
+/* --------------------- */
+@media screen and (max-width: 768px) {
+
+    /* Contenedor */
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    /* NAV */
+    nav .container {
+        flex-direction: stack;
+        align-items: flex-start;
+        padding: auto;
+    }
+    nav .nav-btn {
+        display: block;
+        margin: 0px 0;
+        font-size: 10px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    .hero {
+        margin-top: auto; /* Ajusta este valor según el alto de tu navbar */
+    }
+    .btn{
+        width: 100%;
+        max-width: 280px;
+        margin: 10px auto;
+    }
+    .btn-github {
+        width: 100%;
+        max-width: 203px;
+        margin: 10px auto;
+    }
+
+    /* SKILLS */
+    #skills table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* o space-between */
+        gap: 10px;
+    }
+
+    #skills td {
+        width: 90%;
+        margin: 5px 0;
+        display: flex;
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .skill-box {
+        width: 100%;
+        max-width: 180px;
+        margin-bottom: 20px;
+    }
+
+    /* PROYECTOS */
+    .swiper-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    /* CONTACTO */
+    #contact .btn i {
+        flex-direction: column;
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    #contact .contact-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #contact form input,
+    #contact form textarea {
+        font-size: 14px;
+    }
+
+    #contact form button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+    #contact .container {
+        display: flex;            /* Utiliza flexbox */
+        flex-direction: row;      /* Cambia a fila */
+        justify-content: center;  /* Alinea los íconos en el centro */
+        gap: 20px;                /* Espacio entre los íconos */
+        text-align: center;       /* Asegura que los íconos estén centrados */
+        align-items: center;      /* Alinea los íconos en el centro */
+    }
+    
+      #contact a {
+        margin: 0; /* Elimina el margen entre íconos */
+      }
+}
+
   
