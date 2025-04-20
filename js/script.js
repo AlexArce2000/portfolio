@@ -8,3 +8,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+var typed = new Typed("#typed", {
+    strings: ["Alexis Arce", "Desarrollador Web", "Backend"],
+    typeSpeed: 100,
+    backSpeed: 40,
+    loop: true
+  });

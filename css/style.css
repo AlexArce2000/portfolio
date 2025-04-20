@@ -1,4 +1,8 @@
 /* Estilos generales */
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../font/ComicMono.ttf') format('truetype');
+  }
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +12,8 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;  
+    color: #ffffff;
+    background-color: #24273a;  
 }
 
 .container {
@@ -26,6 +30,7 @@ body {
 }
 
 .hero h1 {
+    font-family: 'MiFuente';
     font-size: 3em;
 }
 
@@ -57,7 +62,7 @@ body {
 /* Sección de "Sobre mí" */
 #about {
     text-align: center;
-    background-color: white;
+    background-color: #2b2f4b;
     padding: 50px 0;
     text-align: left;
 }
@@ -74,7 +79,7 @@ body {
 /* Sección de proyectos */
 #projects {
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background-color: #2b2f4b;
     text-align: center;
 }
 
@@ -90,7 +95,7 @@ body {
     margin: 15px; 
     flex: 1 1 300px; 
     text-align: left; 
-    background-color: white;
+    background-color: #061930;
     border-radius: 8px; 
     padding: 20px; /* Espacio interno dentro de la tarjeta */
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
@@ -106,7 +111,7 @@ body {
 
 /* Efecto hover para las tarjetas de proyectos */
 .project-card:hover {
-    background-color: #e0e0e0; /* Fondo suave al pasar el ratón */
+    background-color: #1b3758; /* Fondo suave al pasar el ratón */
     transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el ratón */
 }
@@ -228,7 +233,7 @@ nav .nav-btn:hover {
 }
 
 #contact .btn:hover {
-    background-color: #f0f0f0; 
+    background-color: #1b3758; 
     transform: scale(1.0); 
 }
 
