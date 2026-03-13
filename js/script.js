@@ -69,29 +69,27 @@ async function handleSubmit(event) {
 form.addEventListener("submit", handleSubmit);
 // Inicializar Fancybox
 Fancybox.bind("[data-fancybox]", {
-    // Configuraciones personalizadas
-    Toolbar: {
-        display: {
-            left: ["infobar"],
-            middle: [],
-            right: ["iterateZoom", "slideshow", "fullScreen", "download", "thumbs", "close"],
-        },
-    },
-    Images: {
-        Panzoom: {
-            maxScale: 2,
-        },
-    },
+    // Cuando se cierra Fancybox, forzamos a Swiper a recalcular
+    on: {
+        destroy: () => {
+            const swiperInstance = document.querySelector('.mySwiper').swiper;
+            if (swiperInstance) {
+                swiperInstance.update();
+            }
+        }
+    }
 });
-// Cargar el script de Swiper primero
-const script = document.createElement('script');
-script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-script.onload = () => {
+const swiperInit = () => {
     new Swiper(".mySwiper", {
-        slidesPerView: 1, // Por defecto 1 en móvil
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
         grabCursor: true,
+        
+        observer: true,
+        observeParents: true,
+        watchSlidesProgress: true,
+
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -101,15 +99,17 @@ script.onload = () => {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-            // Cuando la pantalla sea >= 768px (Tablet)
-            768: {
-                slidesPerView: 2,
-            },
-            // Cuando la pantalla sea >= 1024px (Desktop)
-            1024: {
-                slidesPerView: 3,
-            },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
         },
     });
 };
-document.head.appendChild(script);
+
+if (typeof Swiper === 'undefined') {
+    const swiperScript = document.createElement('script');
+    swiperScript.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+    swiperScript.onload = swiperInit;
+    document.head.appendChild(swiperScript);
+} else {
+    swiperInit();
+}

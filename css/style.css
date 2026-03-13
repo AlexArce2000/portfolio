@@ -501,7 +501,6 @@ body.dark-mode .skill img {
 }
 
 /* Projects */
-/* --- Mejora de Proyectos con Imágenes --- */
 
 .project-grid {
     display: grid;
@@ -518,10 +517,8 @@ body.dark-mode .skill img {
 }
 
 .project-image {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
+    flex-shrink: 0; /* No se encoge */
+    height: 200px;
 }
 
 .project-image a {
@@ -546,15 +543,41 @@ body.dark-mode .skill img {
     padding: 1.5rem;
 }
 .project-content p {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Número de líneas máximas */
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.5;
-    height: 4.5em; /* (line-height * número de líneas) */
+    height: 100px; /* Altura fija para que todas las tarjetas sean iguales */
+    overflow-y: auto; /* Activa el scroll vertical solo cuando el texto sobra */
     margin-bottom: 1.5rem;
-    flex: none; /* Cambiamos a none para que el height fijo mande */
+    padding-right: 10px; /* Espacio para que el texto no pegue con la barra */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    
+    /* Para que el scroll sea suave */
+    scrollbar-gutter: stable; 
+}
+.project-content p::-webkit-scrollbar {
+    width: 4px; /* Barra muy delgada */
+}
+.project-content p::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); /* Fondo de la barra casi invisible */
+    border-radius: 10px;
+}
+
+.project-content p::-webkit-scrollbar-thumb {
+    background: var(--primary); /* El color azul de tu marca */
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+/* Solo mostrar la barra de scroll cuando pasamos el mouse por la tarjeta */
+.project-content p::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.project-card:hover .project-content p::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+.project-links-group, .project-link {
+    margin-top: auto; 
 }
 .project-card h3 {
     font-size: 1.4rem;
@@ -636,12 +659,16 @@ body.dark-mode .project-card:hover {
     color: var(--primary);
     text-transform: uppercase;
 }
+.carousel-wrapper {
+    position: relative;
+    padding: 0 45px; /* Espacio para que las flechas no toquen las tarjetas */
+    width: 100%;
+}
 /* Estilos específicos para el carrusel */
 .swiper {
     width: 100%;
-    padding: 20px 60px 60px 60px !important; /* 60px a los lados para las flechas */
-    position: relative;
-    overflow: hidden; /* Esto mantiene las tarjetas recortadas en los bordes del padding */
+    padding: 20px 0 60px 0 !important; /* Solo espacio arriba y abajo */
+    overflow: hidden;
 }
 
 .swiper-slide {
@@ -660,20 +687,18 @@ body.dark-mode .project-card:hover {
     border: 1px solid var(--border);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     top: 50% !important;
-    transform: translateY(-50%);
+    transform: translateY(-100%); /* Ajuste para centrar respecto a la tarjeta */
+    position: absolute; /* Importante */
+    z-index: 10;
     transition: all 0.3s ease;
 }
-.swiper-button-prev {
-    left: 5px !important;
-}
-.swiper-button-next {
-    right: 5px !important;
-}
+.swiper-button-prev { left: -10px !important; }
+.swiper-button-next { right: -10px !important; }
+
 .swiper-button-next:hover, 
 .swiper-button-prev:hover {
     background: var(--primary);
     color: white !important;
-    border-color: var(--primary);
 }
 .swiper-button-next::after, 
 .swiper-button-prev::after {
@@ -695,12 +720,20 @@ body.dark-mode .project-card:hover {
 }
 
 /* Ajuste de la tarjeta para que ocupe todo el slide */
-.swiper-slide .project-card {
-    width: 100%;
-    margin: 0; /* Quitamos márgenes manuales, Swiper usa spaceBetween */
-    height: 100%; /* Que ocupen todo el alto disponible */
+.swiper-slide {
+    height: auto !important;
+    display: flex;
+    align-items: stretch; /* Obliga a que todas midan igual */
 }
 
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Muy importante */
+    min-height: 500px; /* Ajusta este valor según necesites */
+    background: var(--card-bg);
+}
 /* Footer */
 .footer {
     padding: 100px 0 50px;

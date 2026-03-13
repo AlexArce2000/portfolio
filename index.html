@@ -191,7 +191,8 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Proyectos Seleccionados</h2>
-
+<!-- NUEVO ENVOLTORIO PARA LAS FLECHAS -->
+        <div class="carousel-wrapper">
             <!-- Contenedor principal de Swiper -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -206,10 +207,10 @@
 
                                 <!-- Fotos adicionales ocultas (se verán solo al abrir la galería) -->
                                 <div style="display:none">
-                                        
+
                                     <a href="assets/chat-project/login-oscuro.PNG" data-fancybox="gallery-chat"
                                         data-caption="Login Modo Oscuro"></a>
-                                        
+
                                     <a href="assets/chat-project/Crear-sala.PNG" data-fancybox="gallery-chat"
                                         data-caption="Crear Salas"></a>
                                     <a href="assets/chat-project/inicio-salas-publicas.PNG" data-fancybox="gallery-chat"
@@ -217,9 +218,9 @@
                                     <a href="assets/chat-project/inicio.PNG" data-fancybox="gallery-chat"
                                         data-caption="Inicio de Chat"></a>
                                     <a href="assets/chat-project/unirse-sala-privada.PNG" data-fancybox="gallery-chat"
-                                        data-caption="Unirse a Sala Privada"></a>    
+                                        data-caption="Unirse a Sala Privada"></a>
                                     <a href="assets/chat-project/sala.PNG" data-fancybox="gallery-chat"
-                                        data-caption="Sala Privada"></a>    
+                                        data-caption="Sala Privada"></a>
 
                                 </div>
                             </div>
@@ -243,7 +244,9 @@
                             </div>
                         </div>
                     </div>
-<div class="swiper-slide">
+
+
+                    <div class="swiper-slide">
                         <div class="project-card">
                             <div class="project-image">
                                 <a href="assets/LL1/inicio.PNG" data-fancybox="gallery-LL1"
@@ -253,74 +256,86 @@
 
                                 <!-- Fotos adicionales ocultas (se verán solo al abrir la galería) -->
                                 <div style="display:none">
-                                        
+
                                     <a href="assets/LL1/inicio2.PNG" data-fancybox="gallery-LL1"
                                         data-caption="Pantalla de inicio"></a>
-                                        
+                                    <a href="assets/LL1/produccion.PNG" data-fancybox="gallery-LL1"
+                                        data-caption="Pantalla de resultado"></a>
+
                                 </div>
                             </div>
                             <div class="project-content">
-                                <div class="project-tags">Angular • Spring Boot • MongoDB • WebSockets</div>
-                                <h3>Multi-Chat Fullstack</h3>
-                                <p>Plataforma de chat en tiempo real con arquitectura híbrida de datos.
-                                    Gestiona usuarios con PostgreSQL/JWT y optimiza el historial de mensajes con
-                                    MongoDB,
-                                    logrando una comunicación instantánea y escalable.</p>
+                                <div class="project-tags">Java Servlets • JSP • Tomcat • Maven</div>
+                                <h3>LL(1) Parser Visualizer</h3>
+                                <p>Herramienta interactiva para el análisis de gramáticas en la teoría de compiladores.
+                                    Automatiza el cálculo de los conjuntos <strong>First y Follow</strong>, y genera la
+                                    <strong>Tabla de Análisis Predictivo LL(1)</strong>. Soporta producciones complejas
+                                    y transiciones vacías (ε), proporcionando una visualización clara y educativa del
+                                    proceso.
+                                </p>
+
                                 <div class="project-links-group">
-                                    <a href="https://github.com/AlexArce2000/multi-chat-frontend" class="project-link"
-                                        target="_blank">
+                                    <a href="https://github.com/AlexArce2000/LL1-Parser-Visualization"
+                                        class="project-link" target="_blank">
+                                        Ver Código <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <a href="assets/consulta-py/Captura1.PNG" data-fancybox="gallery-conspy"
+                                    data-caption="Interfaz de Consulta en Angular">
+                                    <img src="assets/consulta-py/Captura1.PNG" alt="Consulta Datos PY Preview">
+                                </a>
+                                <div style="display:none">
+                                    <a href="assets/consulta-py/Captura12.PNG" data-fancybox="gallery-conspy"
+                                        data-caption="Pantalla búsqueda">
+                                    </a>
+                                    <a href="assets/consulta-py/captura2.png" data-fancybox="gallery-conspy"
+                                        data-caption="Restultado búsqueda">
+                                    </a>
+
+
+                                    <a href="assets/consulta-py/CapturaSwagger.PNG" data-fancybox="gallery-conspy"
+                                        data-caption="Documentación de API con Swagger">
+                                    </a>
+                                    <a href="assets/consulta-py/CapturaSwagger2.PNG" data-fancybox="gallery-conspy"
+                                        data-caption="Documentación de API con Swagger"></a>
+
+
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-tags">Angular • Jakarta EE • MyBatis • WildFly</div>
+                                <h3>Consulta de Datos PY</h3>
+                                <p>
+                                    Sistema integral de consulta ciudadana que expone una API REST para la búsqueda
+                                    dinámica de personas.
+                                    Implementa un motor de filtrado multi-parámetro (Cédula, Nombre, Apellido)
+                                    desarrollado con
+                                    <strong>Jakarta EE y MyBatis</strong> para una gestión eficiente de persistencia en
+                                    MySQL,
+                                    desplegado sobre servidor WildFly y con un frontend moderno en
+                                    <strong>Angular</strong>.
+                                </p>
+                                <div class="project-links-group">
+                                    <a href="https://github.com/AlexArce2000/consulta-datos-pydb-frontend"
+                                        class="project-link" target="_blank">
                                         <i class="fab fa-github"></i> Front
                                     </a>
-                                    <a href="https://github.com/AlexArce2000/multi-chat-backend" class="project-link"
-                                        target="_blank">
+                                    <a href="https://github.com/AlexArce2000/consulta-datos-pydb-backend"
+                                        class="project-link" target="_blank">
                                         <i class="fab fa-github"></i> Back
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </div>                    
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image"><img src="img/cms.jpg" alt=""></div>
-                            <div class="project-content">
-                                <div class="project-tags">Django • Bootstrap</div>
-                                <h3>CMS Enterprise</h3>
-                                <p>Sistema avanzado de gestión de contenidos con arquitectura modular.</p>
-                                <a href="https://github.com/AlexArce2000/cms.git" class="project-link">Ver Código <i
-                                        class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
                     </div>
 
-
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image"><img src="img/bookbase.jpg" alt=""></div>
-                            <div class="project-content">
-                                <div class="project-tags">Angular • Spring Boot</div>
-                                <h3>BookBase Fullstack</h3>
-                                <p>Gestión bibliográfica utilizando microservicios y diseño responsive.</p>
-                                <a href="https://github.com/AlexArce2000/crud-angular-spring" class="project-link">Ver
-                                    Código <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proyecto 4: LL1 Parser -->
-                    <div class="swiper-slide">
-                        <div class="project-card">
-                            <div class="project-image"><img src="img/ll1.jpg" alt=""></div>
-                            <div class="project-content">
-                                <div class="project-tags">Python • Compiladores</div>
-                                <h3>LL(1) Parser Visualizer</h3>
-                                <p>Herramienta educativa para visualización de análisis sintáctico.</p>
-                                <a href="https://github.com/AlexArce2000/LL1-Parser-Visualization"
-                                    class="project-link">Ver Código <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proyecto 5: Reloj Struct -->
                     <div class="swiper-slide">
                         <div class="project-card">
                             <div class="project-image"><img src="img/reloj.jpg" alt=""></div>
@@ -334,15 +349,16 @@
                         </div>
                     </div>
 
-                </div>
 
+
+                </div>
                 <!-- Botones de navegación -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <!-- Paginación (bolitas) -->
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
+        </div>    
     </section>
     <section id="papers" class="section alt-bg">
         <div class="container">
