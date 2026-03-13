@@ -7,13 +7,15 @@
     --accent: #3b82f6;
     --border: #e2e8f0;
     --nav-bg: rgba(248, 250, 252, 0.8);
-    --success: #16a34a; 
+    --success: #16a34a;
     --success-bg: #dcfce7;
 }
+
 @font-face {
     font-family: 'MiFuente';
     src: url('../font/ComicMono.ttf') format('truetype');
-  }
+}
+
 /* Variables Modo Oscuro */
 body.dark-mode {
     --bg-color: #0f172a;
@@ -65,6 +67,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 /* Contenedor principal del logo */
 .logo-group {
     display: flex;
@@ -77,7 +80,7 @@ body {
 /* El círculo con las iniciales  */
 .logo-circle {
     font-family: 'MiFuente', sans-serif;
-    width: 38px; 
+    width: 38px;
     height: 38px;
     background-color: #2a3fda;
     color: #ffffff !important;
@@ -94,12 +97,13 @@ body {
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1; 
+    line-height: 1.1;
 }
 
 .logo-name {
     font-weight: 700;
-    font-size: 1.05rem; /* Tamaño optimizado */
+    font-size: 1.05rem;
+    /* Tamaño optimizado */
     color: var(--text-main);
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -111,7 +115,8 @@ body {
 
 /* El rol que aparece debajo */
 .logo-role {
-    font-size: 0.65rem; /* Más pequeño para jerarquía visual */
+    font-size: 0.65rem;
+    /* Más pequeño para jerarquía visual */
     color: var(--text-muted);
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -120,37 +125,43 @@ body {
 }
 
 /* 1. Preparar transiciones suaves para todos los elementos */
-.logo-group, 
-.logo-circle, 
-.logo-name, 
+.logo-group,
+.logo-circle,
+.logo-name,
 .logo-role {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 2. Efecto general al pasar el mouse por el grupo */
 .logo-group:hover {
-    transform: translateY(-2px); /* Eleva todo el conjunto */
+    transform: translateY(-2px);
+    /* Eleva todo el conjunto */
 }
 
 /* 3. Efecto específico en el círculo (Glow + Rotación) */
 .logo-group:hover .logo-circle {
-    background-color: var(--accent); /* Cambia a un azul más claro */
+    background-color: var(--accent);
+    /* Cambia a un azul más claro */
 
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); /* Brillo exterior */
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    /* Brillo exterior */
 }
 
 /* 4. Efecto en el texto (Cambio de color y espaciado) */
 .logo-group:hover .logo-name {
-    color: var(--primary); /* Todo el nombre se vuelve azul */
+    color: var(--primary);
+    /* Todo el nombre se vuelve azul */
 }
 
 .logo-group:hover .logo-name span {
-    color: var(--text-main); /* El apellido (que era azul) se vuelve blanco/oscuro */
+    color: var(--text-main);
+    /* El apellido (que era azul) se vuelve blanco/oscuro */
 }
 
 /* 5. Efecto en el Rol (Expandir letras) */
 .logo-group:hover .logo-role {
-    letter-spacing: 2px; /* Las letras se separan sutilmente */
+    letter-spacing: 2px;
+    /* Las letras se separan sutilmente */
     color: var(--primary);
 }
 
@@ -165,8 +176,9 @@ body {
 body.dark-mode .logo-circle {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
 .logo {
-    
+
     font-weight: 700;
     font-size: 1.2rem;
     text-decoration: none;
@@ -264,7 +276,8 @@ input:checked+.slider:before {
 .badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el punto y el texto */
+    gap: 8px;
+    /* Espacio entre el punto y el texto */
     background: var(--success-bg);
     color: var(--success);
     padding: 6px 16px;
@@ -273,6 +286,7 @@ input:checked+.slider:before {
     font-weight: 600;
     border: 1px solid rgba(34, 197, 94, 0.2);
 }
+
 .badge::before {
     content: '';
     width: 8px;
@@ -282,13 +296,26 @@ input:checked+.slider:before {
     display: inline-block;
     animation: pulse-green 2s infinite;
 }
+
 @keyframes pulse-green {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
 }
+
 .hero h1 {
-    
+
     font-size: 4rem;
     margin: 1.5rem 0 0.5rem;
     letter-spacing: -1px;
@@ -446,16 +473,19 @@ body.dark-mode .alt-bg {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    background: rgba(255, 255, 255, 0.03);
+    /* Fondo casi invisible */
     border: 1px solid var(--border);
     padding: 10px 18px;
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-muted); /* Texto suave por defecto */
+    color: var(--text-muted);
+    /* Texto suave por defecto */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
 }
+
 /* Efecto al pasar el mouse por cada tecnología individualmente */
 .skill:hover {
     background: var(--primary);
@@ -469,7 +499,8 @@ body.dark-mode .alt-bg {
     width: 20px;
     height: 20px;
     object-fit: contain;
-    filter: grayscale(1) opacity(0.7); /* Icono gris y suave por defecto */
+    filter: grayscale(1) opacity(0.7);
+    /* Icono gris y suave por defecto */
     transition: all 0.3s ease;
 }
 
@@ -477,7 +508,8 @@ body.dark-mode .alt-bg {
 /* En modo oscuro, algunos iconos oscuros se ven mal, 
    podemos aplicar un filtro de brillo si es necesario */
 body.dark-mode .skill img {
-    filter: brightness(0) invert(1); /* Esto vuelve los iconos blancos en modo oscuro */
+    filter: brightness(0) invert(1);
+    /* Esto vuelve los iconos blancos en modo oscuro */
 }
 
 /* Si quieres que los iconos recuperen su color original al hacer hover */
@@ -517,7 +549,8 @@ body.dark-mode .skill img {
 }
 
 .project-image {
-    flex-shrink: 0; /* No se encoge */
+    flex-shrink: 0;
+    /* No se encoge */
     height: 200px;
 }
 
@@ -525,7 +558,8 @@ body.dark-mode .skill img {
     display: block;
     width: 100%;
     height: 100%;
-    cursor: zoom-in; /* Cambia el cursor a una lupa */
+    cursor: zoom-in;
+    /* Cambia el cursor a una lupa */
 }
 
 /* Evitar que Fancybox afecte el diseño de la imagen */
@@ -539,31 +573,41 @@ body.dark-mode .skill img {
 .project-content {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Esto hace que esta parte crezca y rellene el espacio vacío */
+    flex: 1;
+    /* Esto hace que esta parte crezca y rellene el espacio vacío */
     padding: 1.5rem;
 }
+
 .project-content p {
-    height: 100px; /* Altura fija para que todas las tarjetas sean iguales */
-    overflow-y: auto; /* Activa el scroll vertical solo cuando el texto sobra */
+    height: 100px;
+    /* Altura fija para que todas las tarjetas sean iguales */
+    overflow-y: auto;
+    /* Activa el scroll vertical solo cuando el texto sobra */
     margin-bottom: 1.5rem;
-    padding-right: 10px; /* Espacio para que el texto no pegue con la barra */
+    padding-right: 10px;
+    /* Espacio para que el texto no pegue con la barra */
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--text-muted);
-    
+
     /* Para que el scroll sea suave */
-    scrollbar-gutter: stable; 
+    scrollbar-gutter: stable;
 }
+
 .project-content p::-webkit-scrollbar {
-    width: 4px; /* Barra muy delgada */
+    width: 4px;
+    /* Barra muy delgada */
 }
+
 .project-content p::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05); /* Fondo de la barra casi invisible */
+    background: rgba(0, 0, 0, 0.05);
+    /* Fondo de la barra casi invisible */
     border-radius: 10px;
 }
 
 .project-content p::-webkit-scrollbar-thumb {
-    background: var(--primary); /* El color azul de tu marca */
+    background: var(--primary);
+    /* El color azul de tu marca */
     border-radius: 10px;
     opacity: 0.5;
 }
@@ -576,9 +620,12 @@ body.dark-mode .skill img {
 .project-card:hover .project-content p::-webkit-scrollbar-thumb {
     background: var(--primary);
 }
-.project-links-group, .project-link {
-    margin-top: auto; 
+
+.project-links-group,
+.project-link {
+    margin-top: auto;
 }
+
 .project-card h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
@@ -595,9 +642,12 @@ body.dark-mode .skill img {
 /* --- Efectos Hover --- */
 
 .project-card:hover {
-    transform: translateY(-10px); /* Eleva la tarjeta */
-    border-color: var(--primary); /* Cambia el borde al azul principal */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+    transform: translateY(-10px);
+    /* Eleva la tarjeta */
+    border-color: var(--primary);
+    /* Cambia el borde al azul principal */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    /* Sombra más profunda */
 }
 
 body.dark-mode .project-card:hover {
@@ -605,7 +655,8 @@ body.dark-mode .project-card:hover {
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.1); /* Efecto zoom en la imagen */
+    transform: scale(1.1);
+    /* Efecto zoom en la imagen */
 }
 
 .project-link {
@@ -620,14 +671,17 @@ body.dark-mode .project-card:hover {
 }
 
 .project-card:hover .project-link {
-    gap: 12px; /* La flecha se mueve un poco a la derecha */
+    gap: 12px;
+    /* La flecha se mueve un poco a la derecha */
 }
+
 /* Contenedor para múltiples enlaces en una misma tarjeta */
 
 .project-links-group {
     display: flex;
     gap: 1.5rem;
-    margin-top: auto; /* Empuja los enlaces al fondo de la tarjeta */
+    margin-top: auto;
+    /* Empuja los enlaces al fondo de la tarjeta */
 }
 
 .project-links-group .project-link {
@@ -637,6 +691,7 @@ body.dark-mode .project-card:hover {
 .project-links-group i {
     font-size: 1rem;
 }
+
 /* Papers */
 .paper-card {
     display: flex;
@@ -659,25 +714,30 @@ body.dark-mode .project-card:hover {
     color: var(--primary);
     text-transform: uppercase;
 }
+
 .carousel-wrapper {
     position: relative;
-    padding: 0 45px; /* Espacio para que las flechas no toquen las tarjetas */
+    padding: 0 45px;
+    /* Espacio para que las flechas no toquen las tarjetas */
     width: 100%;
 }
+
 /* Estilos específicos para el carrusel */
 .swiper {
     width: 100%;
-    padding: 20px 0 60px 0 !important; /* Solo espacio arriba y abajo */
+    padding: 20px 0 60px 0 !important;
+    /* Solo espacio arriba y abajo */
     overflow: hidden;
 }
 
 .swiper-slide {
-    height: auto !important; /* Permite que el slide crezca según el más alto */
+    height: auto !important;
+    /* Permite que el slide crezca según el más alto */
     display: flex;
 }
 
 /* Personalización de flechas */
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
     color: var(--primary) !important;
     background: var(--card-bg);
@@ -687,27 +747,38 @@ body.dark-mode .project-card:hover {
     border: 1px solid var(--border);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     top: 50% !important;
-    transform: translateY(-100%); /* Ajuste para centrar respecto a la tarjeta */
-    position: absolute; /* Importante */
+    transform: translateY(-100%);
+    /* Ajuste para centrar respecto a la tarjeta */
+    position: absolute;
+    /* Importante */
     z-index: 10;
     transition: all 0.3s ease;
 }
-.swiper-button-prev { left: -10px !important; }
-.swiper-button-next { right: -10px !important; }
 
-.swiper-button-next:hover, 
+.swiper-button-prev {
+    left: -10px !important;
+}
+
+.swiper-button-next {
+    right: -10px !important;
+}
+
+.swiper-button-next:hover,
 .swiper-button-prev:hover {
     background: var(--primary);
     color: white !important;
 }
-.swiper-button-next::after, 
+
+.swiper-button-next::after,
 .swiper-button-prev::after {
     font-size: 1.2rem !important;
     font-weight: bold;
 }
+
 .swiper-pagination {
     bottom: 10px !important;
 }
+
 /* Personalización de bolitas */
 .swiper-pagination-bullet {
     background: var(--text-muted);
@@ -723,17 +794,21 @@ body.dark-mode .project-card:hover {
 .swiper-slide {
     height: auto !important;
     display: flex;
-    align-items: stretch; /* Obliga a que todas midan igual */
+    align-items: stretch;
+    /* Obliga a que todas midan igual */
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%; /* Muy importante */
-    min-height: 500px; /* Ajusta este valor según necesites */
+    height: 100%;
+    /* Muy importante */
+    min-height: 500px;
+    /* Ajusta este valor según necesites */
     background: var(--card-bg);
 }
+
 /* Footer */
 .footer {
     padding: 100px 0 50px;
@@ -774,6 +849,16 @@ body.dark-mode .project-card:hover {
     color: var(--primary);
 }
 
+
+.nav-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+    z-index: 1001;
+    /* Por encima de todo */
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -795,13 +880,57 @@ body.dark-mode .project-card:hover {
 
     .project-image {
         height: 180px;
-    }   
-    .swiper {
-        padding: 20px 10px 50px 10px !important; /* Menos espacio en móvil */
     }
-    
-    .swiper-button-next, 
+
+    .swiper {
+        padding: 20px 10px 50px 10px !important;
+        /* Menos espacio en móvil */
+    }
+
+    .swiper-button-next,
     .swiper-button-prev {
-        display: none !important; /* Escondemos flechas en móvil */
-    }    
+        display: none !important;
+        /* Escondemos flechas en móvil */
+    }
+
+    .nav-menu-btn {
+        display: block;
+        /* Mostrar solo en móvil */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 45%;
+        /* Ocupa el 80% del ancho */
+        height: 100vh;
+        background: rgba(185, 185, 185, 0.08);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Clase que activaremos con JS */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajuste del logo para que no se vea apretado */
+    .logo-name {
+        font-size: 0.9rem;
+    }
 }

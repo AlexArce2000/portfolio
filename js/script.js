@@ -113,3 +113,29 @@ if (typeof Swiper === 'undefined') {
 } else {
     swiperInit();
 }
+
+
+// Lógica del Menú Hamburguesa
+const navMenuBtn = document.getElementById('nav-menu-btn');
+const navLinksContainer = document.getElementById('nav-links');
+const navIcon = navMenuBtn.querySelector('i');
+
+navMenuBtn.addEventListener('click', () => {
+    navLinksContainer.classList.toggle('active');
+    
+    if (navLinksContainer.classList.contains('active')) {
+        navIcon.classList.remove('fa-bars');
+        navIcon.classList.add('fa-times');
+    } else {
+        navIcon.classList.remove('fa-times');
+        navIcon.classList.add('fa-bars');
+    }
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinksContainer.classList.remove('active');
+        navIcon.classList.remove('fa-times');
+        navIcon.classList.add('fa-bars');
+    });
+});
