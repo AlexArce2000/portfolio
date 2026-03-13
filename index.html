@@ -500,27 +500,75 @@
                 <!-- Paginación (bolitas) -->
                 <div class="swiper-pagination"></div>
             </div>
-        <!-- Botón central debajo del carrusel -->
-        <div class="view-all-container">
-            <p>¿Quieres ver más proyectos?</p>
-            <a href="https://github.com/AlexArce2000" target="_blank" class="btn btn-secondary">
-                <i class="fab fa-github"></i> Ver todos los repositorios
-            </a>
-        </div>
-    </div> <!-- Cierre de container -->
+            <!-- Botón central debajo del carrusel -->
+            <div class="view-all-container">
+                <p>¿Quieres ver más proyectos?</p>
+                <a href="https://github.com/AlexArce2000" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> Ver todos los repositorios
+                </a>
+            </div>
+        </div> <!-- Cierre de container -->
     </section>
     <section id="papers" class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Investigación & Academia</h2>
-            <div class="paper-card">
-                <div class="paper-icon"><i class="fas fa-file-signature"></i></div>
-                <div class="paper-info">
-                    <span class="paper-label">Paper Publicado</span>
-                    <h3>Análisis de Optimización en Bases de Datos Relacionales</h3>
-                    <p>Un estudio técnico sobre la eficiencia de índices y planes de ejecución en entornos de alta
-                        demanda.</p>
-                    <a href="#" class="btn-text">Ver Publicación <i class="fas fa-external-link-alt"></i></a>
+
+            <div class="papers-grid">
+
+                <!-- Paper 1: Predicción con Stacking -->
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="paper-tag">Machine Learning • Geospatial</div>
+                    </div>
+                    <div class="paper-content">
+                        <h3>Predicción de Riesgo de Incendios Forestales mediante Stacking de Modelos</h3>
+                        <p>
+                            Investigación enfocada en el desarrollo de un modelo de ensamble tipo
+                            <strong>Stacking</strong>
+                            (Random Forest, SVM, KNN) para clasificar la probabilidad de incendios forestales en
+                            Paraguay.
+                            El modelo alcanzó un <strong>86.29% de exactitud</strong> y un AUC de 0.94, integrando datos
+                            satelitales de la NASA y variables meteorológicas de Google Earth Engine.
+                        </p>
+                        <div class="paper-footer">
+                            <span class="paper-date"><i class="far fa-calendar-alt"></i> Publicado en CACIC-2025</span>
+                            <div class="paper-btns">
+                                <a href="assets/papers/Prediccion_Incendios_Stacking.pdf" target="_blank"
+                                    class="btn-paper">
+                                    <i class="fas fa-file-pdf"></i> Leer Paper Completo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Paper 2: XAI con SHAP (Poster/Presentación) -->
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-icon"><i class="fas fa-eye"></i></div>
+                        <div class="paper-tag">XAI • Explainable AI</div>
+                    </div>
+                    <div class="paper-content">
+                        <h3>Identificación de Variables Críticas mediante SHAP (XAI)</h3>
+                        <p>
+                            Presentación técnica para el <strong>Encuentro de Investigadores</strong> sobre el uso de
+                            Inteligencia Artificial Explicable (XAI). Aplicación de técnicas <strong>SHAP</strong>
+                            para interpretar modelos complejos de "caja negra", identificando que la baja humedad,
+                            escaso NDVI y tipos de cobertura específicos son los determinantes clave en el riesgo de
+                            incendio.
+                        </p>
+                        <div class="paper-footer">
+                            <span class="paper-date"><i class="far fa-calendar-alt"></i> Evento Científico 2024</span>
+                            <div class="paper-btns">
+                                <a href="assets/papers/Poster_SHAP_Incendios.pdf" target="_blank" class="btn-paper">
+                                    <i class="fas fa-external-link-alt"></i> Ver Poster/Resumen
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
