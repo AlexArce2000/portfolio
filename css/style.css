@@ -1,395 +1,774 @@
-/* Estilos generales */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --accent: #3b82f6;
+    --border: #e2e8f0;
+    --nav-bg: rgba(248, 250, 252, 0.8);
+    --success: #16a34a; 
+    --success-bg: #dcfce7;
+}
 @font-face {
     font-family: 'MiFuente';
     src: url('../font/ComicMono.ttf') format('truetype');
   }
+/* Variables Modo Oscuro */
+body.dark-mode {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --accent: #60a5fa;
+    --border: #334155;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+    --success: #4ade80;
+    --success-bg: rgba(34, 197, 94, 0.15);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.6;
-    color: #ffffff;
-    background-color: #24273a;  
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Sección de la portada */
-.hero {
-    background: url(fondo.png),#061930;
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-family: 'MiFuente';
-    font-size: 3em;
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-/* Estilo para los botones*/
-.hero .btn {
-    display: inline-block;
-    text-align: center;
-    background-color: #5a6aff; /* Color de fondo */
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px; /* Tamaño consistente */
-    font-weight: bold;
-    border-radius: 5px;
-    width: 200px; /* Ancho fijo */
-    margin: 10px; /* Espacio entre los botones */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el hover */
-}
-
-.hero .btn:hover {
-    background-color: #9ba5ff; /* Color de fondo al pasar el ratón */
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-}
-
-/* Sección de "Sobre mí" */
-#about {
-    text-align: center;
-    background-color: #2b2f4b;
-    padding: 50px 0;
-    text-align: left;
-}
-
-#about h2 {
-    text-align: center;
-}
-#about p {
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-/* Sección de proyectos */
-/* Sección de proyectos */
-#projects {
-    padding: 50px 0;
-    background-color: #2b2f4b;
-    text-align: center;
-}
-
-/* Contenedor principal de los proyectos */
-.swiper-wrapper {
-    display: flex; /* Esto coloca los proyectos en una fila */
-    justify-content: center; /* Centra los proyectos horizontalmente */
-    flex-wrap: wrap; /* Permite que los proyectos se ajusten a una nueva fila si no caben */
-}
-
-/* Cada tarjeta de proyecto */
-.project-card {
-    margin: 15px; 
-    flex: 1 1 300px; 
-    text-align: left; 
-    background-color: #061930;
-    border-radius: 8px; 
-    padding: 20px; /* Espacio interno dentro de la tarjeta */
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves para el hover */
-}
-
-/* Estilo de las imágenes dentro de las tarjetas */
-.project-card img {
-    width: 100%; /* Asegura que las imágenes ocupen todo el ancho de la tarjeta */
-    height: auto;
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
-    margin-top: 10px;
-}
-
-/* Efecto hover para las tarjetas de proyectos */
-.project-card:hover {
-    background-color: #1b3758; /* Fondo suave al pasar el ratón */
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave al pasar el ratón */
-}
-
-/* Sección de habilidades */
-.skill-box {
-    border: 2px solid #333; /* Borde alrededor del cuadro */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px; /* Espacio alrededor del contenido */
-    text-align: center; /* Alinea el contenido al centro */
-    background-color: #f9f9f9; /* Color de fondo suave */
-    transition: all 0.3s ease; /* Efecto de transición */
-    width: 150px;
-    margin: 10px;
-    margin-bottom: 50px;
-}
-#skills h2 {
-    padding-top: 50px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-/* Efecto de hover para cada skill */
-.skill-box:hover {
-    background-color: #e0e0e0; /* Cambia el fondo al pasar el ratón */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra al pasar el ratón */
-}
-
-/* Estilo para los títulos */
-.skill-box b {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Estilo para las imágenes */
-.skill-box img {
-    margin-top: 5px; /* Espacio entre el texto y la imagen */
-    transition: transform 0.3s ease; /* Efecto de escala en la imagen */
-}
-
-.skill-box:hover img {
-    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el ratón */
-}
-
-
-
-/* Navegación */
-nav {
+/* Navbar */
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #061930;
+    padding: 1.2rem 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Contenedor principal del logo */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* El círculo con las iniciales  */
+.logo-circle {
+    font-family: 'MiFuente', sans-serif;
+    width: 38px; 
+    height: 38px;
+    background-color: #2a3fda;
+    color: #ffffff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 750;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* CONTENEDOR CLAVE: Alinea nombre y rol en columna */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1; 
+}
+
+.logo-name {
+    font-weight: 700;
+    font-size: 1.05rem; /* Tamaño optimizado */
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.logo-name span {
+    color: var(--primary);
+}
+
+/* El rol que aparece debajo */
+.logo-role {
+    font-size: 0.65rem; /* Más pequeño para jerarquía visual */
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* 1. Preparar transiciones suaves para todos los elementos */
+.logo-group, 
+.logo-circle, 
+.logo-name, 
+.logo-role {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Efecto general al pasar el mouse por el grupo */
+.logo-group:hover {
+    transform: translateY(-2px); /* Eleva todo el conjunto */
+}
+
+/* 3. Efecto específico en el círculo (Glow + Rotación) */
+.logo-group:hover .logo-circle {
+    background-color: var(--accent); /* Cambia a un azul más claro */
+
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); /* Brillo exterior */
+}
+
+/* 4. Efecto en el texto (Cambio de color y espaciado) */
+.logo-group:hover .logo-name {
+    color: var(--primary); /* Todo el nombre se vuelve azul */
+}
+
+.logo-group:hover .logo-name span {
+    color: var(--text-main); /* El apellido (que era azul) se vuelve blanco/oscuro */
+}
+
+/* 5. Efecto en el Rol (Expandir letras) */
+.logo-group:hover .logo-role {
+    letter-spacing: 2px; /* Las letras se separan sutilmente */
+    color: var(--primary);
+}
+
+/* Ajuste para que el nav-container no rompa el diseño */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Efecto en modo oscuro para el círculo */
+body.dark-mode .logo-circle {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.logo {
+    
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Theme Switcher */
+.theme-switch-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     z-index: 1000;
 }
 
-nav .container {
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 5px;
+    border-radius: 34px;
+}
+
+.slider i {
+    color: #f1c40f;
+    font-size: 14px;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* Hero */
+.hero {
+    padding: 110px 0 100px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el punto y el texto */
+    background: var(--success-bg);
+    color: var(--success);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+.badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--success);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.hero h1 {
+    
+    font-size: 4rem;
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: -1px;
+}
+
+.type-text {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.hero-desc {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 180px;
+    height: 48px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    margin-left: 1rem;
+}
+
+.hero-btns {
     display: flex;
     justify-content: center;
-    padding: 10px 20;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
-nav .nav-btn {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
-nav .nav-btn:hover {
-    background-color: #686868;
+/* Sections */
+.section {
+    padding: 100px 0;
 }
-/* Estilo para el botón GitHub */
-.btn-github {
-    display: inline-block;
+
+.alt-bg {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .alt-bg {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Experience Timeline */
+.timeline {
+    border-left: 1px solid var(--border);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: calc(-2rem - 5px);
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.job-title {
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.skill-category h4 {
+    display: flex;
     align-items: center;
-    text-align: center;
-    background-color: black;  
-    color: white;             
-    padding: 10px 20px;       
-    font-size: 16px;          /* Tamaño del texto */
-    font-weight: bold;
-    text-decoration: none;    /* Elimina el subrayado del enlace */
-    border-radius: 5px;       /* Bordes redondeados */
-    margin-top: 15px;         /* Espacio arriba del botón */
-    border-radius: 5px;
-    width: 200px; /* Ancho fijo para ambos botones */
-    margin: 10px; /* Espacio entre los botones */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones para el hover */
-
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-main);
 }
 
-
-/* Estilo para el ícono de GitHub */
-.btn-github svg {
-    fill: white;              /* El ícono será blanco */
-    width: 20px;              /* Tamaño del ícono */
-    height: 20px;             /* Tamaño del ícono */
+.skill-category h4 i {
+    color: var(--primary);
 }
 
-/* Cambiar el color de fondo cuando se pasa el mouse sobre el botón */
-.btn-github:hover {
-    background-color: #333;  /* Fondo gris oscuro al pasar el mouse */
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-/* Sección de contacto */
-#contact{
-    background: url(fondo.png),#061930;
-    color: white;
-    padding: 50px 0;
-    text-align: center;
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted); /* Texto suave por defecto */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
 }
-#contact .btn {
-    display: inline-block;
-    padding: 10px; 
+/* Efecto al pasar el mouse por cada tecnología individualmente */
+.skill:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+/* Manejo de los iconos de las tecnologías */
+.skill img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.7); /* Icono gris y suave por defecto */
     transition: all 0.3s ease;
 }
 
-#contact .btn:hover {
-    background-color: #1b3758; 
-    transform: scale(1.0); 
+
+/* En modo oscuro, algunos iconos oscuros se ven mal, 
+   podemos aplicar un filtro de brillo si es necesario */
+body.dark-mode .skill img {
+    filter: brightness(0) invert(1); /* Esto vuelve los iconos blancos en modo oscuro */
 }
-#contact .contact-icons {
-    margin-bottom: 30px;
-  }
-  
-  #contact .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff1e;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
-  }
-  
-  #contact .contact-form h3 {
-    margin-bottom: 15px;
-  }
-  
-  #contact form input,
-  #contact form textarea {
-    font-family: 'MiFuente';
 
+/* Si quieres que los iconos recuperen su color original al hacer hover */
+.skill:hover img {
+    filter: brightness(1) invert(0) !important;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.tags span {
+    background: rgba(37, 99, 235, 0.05);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+/* Projects */
+/* --- Mejora de Proyectos con Imágenes --- */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    overflow: hidden;
+}
+
+.project-image {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  #contact form button {
-    display: inline-block;
-    background-color: #2c3ff1;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in; /* Cambia el cursor a una lupa */
+}
+
+/* Evitar que Fancybox afecte el diseño de la imagen */
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Esto hace que esta parte crezca y rellene el espacio vacío */
+    padding: 1.5rem;
+}
+.project-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número de líneas máximas */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    height: 4.5em; /* (line-height * número de líneas) */
+    margin-bottom: 1.5rem;
+    flex: none; /* Cambiamos a none para que el height fijo mande */
+}
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* --- Efectos Hover --- */
+
+.project-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta */
+    border-color: var(--primary); /* Cambia el borde al azul principal */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1); /* Efecto zoom en la imagen */
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap 0.3s ease;
+}
+
+.project-card:hover .project-link {
+    gap: 12px; /* La flecha se mueve un poco a la derecha */
+}
+/* Contenedor para múltiples enlaces en una misma tarjeta */
+
+.project-links-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto; /* Empuja los enlaces al fondo de la tarjeta */
+}
+
+.project-links-group .project-link {
+    font-size: 0.85rem;
+}
+
+.project-links-group i {
+    font-size: 1rem;
+}
+/* Papers */
+.paper-card {
+    display: flex;
+    gap: 2rem;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    align-items: center;
+}
+
+.paper-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.paper-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+/* Estilos específicos para el carrusel */
+.swiper {
+    width: 100%;
+    padding: 20px 60px 60px 60px !important; /* 60px a los lados para las flechas */
+    position: relative;
+    overflow: hidden; /* Esto mantiene las tarjetas recortadas en los bordes del padding */
+}
+
+.swiper-slide {
+    height: auto !important; /* Permite que el slide crezca según el más alto */
+    display: flex;
+}
+
+/* Personalización de flechas */
+.swiper-button-next, 
+.swiper-button-prev {
+    color: var(--primary) !important;
+    background: var(--card-bg);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    top: 50% !important;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.swiper-button-prev {
+    left: 5px !important;
+}
+.swiper-button-next {
+    right: 5px !important;
+}
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    background: var(--primary);
+    color: white !important;
+    border-color: var(--primary);
+}
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+    font-size: 1.2rem !important;
     font-weight: bold;
+}
+.swiper-pagination {
+    bottom: 10px !important;
+}
+/* Personalización de bolitas */
+.swiper-pagination-bullet {
+    background: var(--text-muted);
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+    opacity: 1;
+}
+
+/* Ajuste de la tarjeta para que ocupe todo el slide */
+.swiper-slide .project-card {
+    width: 100%;
+    margin: 0; /* Quitamos márgenes manuales, Swiper usa spaceBetween */
+    height: 100%; /* Que ocupen todo el alto disponible */
+}
+
+/* Footer */
+.footer {
+    padding: 100px 0 50px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.main-form {
+    max-width: 500px;
+    margin: 3rem auto;
+}
+
+.main-form input,
+.main-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
     border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(95, 109, 235, 0.3);
-  }
-  
-  #contact form button:hover {
-    background-color: #788aff;
-    transform: scale(1.05);
-  }
-/* --------------------- */
-/* ESTILOS RESPONSIVOS 📱 */
-/* --------------------- */
-@media screen and (max-width: 768px) {
+    margin-bottom: 1rem;
+}
 
-    /* Contenedor */
-    .container {
-        width: 95%;
-        padding: 0 10px;
-    }
+.footer-bottom {
+    margin-top: 50px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+}
 
-    /* NAV */
-    nav .container {
-        flex-direction: stack;
-        align-items: flex-start;
-        padding: auto;
-    }
-    nav .nav-btn {
-        display: block;
-        margin: 0px 0;
-        font-size: 10px;
-    }
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: 0.3s;
+}
 
-    /* HERO */
+.social-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
     .hero h1 {
-        font-size: 1.8em;
-    }
-    .hero {
-        margin-top: auto; /* Ajusta este valor según el alto de tu navbar */
-    }
-    .btn{
-        width: 100%;
-        max-width: 280px;
-        margin: 10px auto;
-    }
-    .btn-github {
-        width: 100%;
-        max-width: 203px;
-        margin: 10px auto;
+        font-size: 2.5rem;
     }
 
-    /* SKILLS */
-    #skills table {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* o space-between */
-        gap: 10px;
+    .nav-links {
+        display: none;
     }
 
-    #skills td {
-        width: 90%;
-        margin: 5px 0;
-        display: flex;
-        flex: 1 1 100%;
-        justify-content: center;
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 
-    .skill-box {
-        width: 100%;
-        max-width: 180px;
-        margin-bottom: 20px;
-    }
-
-    /* PROYECTOS */
-    .swiper-wrapper {
+    .paper-card {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
-    .project-card {
-        width: 90%;
-        margin: 15px auto;
-    }
-
-    /* CONTACTO */
-    #contact .btn i {
-        flex-direction: column;
-        font-size: 24px;
-        padding: 8px;
-    }
-
-    #contact .contact-form {
-        width: 100%;
-        padding: 20px;
-    }
-
-    #contact form input,
-    #contact form textarea {
-        font-size: 14px;
-    }
-
-    #contact form button {
-        width: 100%;
-        font-size: 14px;
-        padding: 10px;
-    }
-    #contact .container {
-        display: flex;            /* Utiliza flexbox */
-        flex-direction: row;      /* Cambia a fila */
-        justify-content: center;  /* Alinea los íconos en el centro */
-        gap: 20px;                /* Espacio entre los íconos */
-        text-align: center;       /* Asegura que los íconos estén centrados */
-        align-items: center;      /* Alinea los íconos en el centro */
+    .project-image {
+        height: 180px;
+    }   
+    .swiper {
+        padding: 20px 10px 50px 10px !important; /* Menos espacio en móvil */
     }
     
-      #contact a {
-        margin: 0; /* Elimina el margen entre íconos */
-      }
+    .swiper-button-next, 
+    .swiper-button-prev {
+        display: none !important; /* Escondemos flechas en móvil */
+    }    
 }
-
-  

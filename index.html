@@ -1,191 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <title>Alexis Arce | Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
 </head>
-<body>
-    <div id="arriba"></div>
-    <nav>
-        <div class="container">
-            <a href="#arriba" class="nav-btn">Inicio</a>
-            <a href="#about" class="nav-btn">Sobre mí</a>
-            <a href="#skills" class="nav-btn">Skills & Tecnologías</a>
-            <a href="#projects" class="nav-btn">Mis Proyectos</a>
-            <a href="#contact" class="nav-btn">Contacto</a>
+
+<body class="dark-mode">
+
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" checked />
+            <div class="slider round">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+        </label>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo-group">
+                <div class="logo-circle">AA</div>
+                <!-- Contenedor para alinear los textos uno sobre otro -->
+                <div class="logo-text">
+                    <span class="logo-name">ALEXIS<span> ARCE</span></span>
+                    <span class="logo-role">Full Stack Developer</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#papers">Papers</a></li>
+                <li><a href="#contact" class="nav-contact-btn">Contacto</a></li>
+            </ul>
         </div>
     </nav>
-    
-    <!-- Sección de Portada -->
-    <header class="hero">
+
+    <header id="home" class="hero">
         <div class="container">
-            <h1>Hola, soy Alexis Arce</h1>
-            <h1><span id="typed"></span></h1>
-            <a href="#contact" class="btn" target="_blank">Enviar un mensaje</a>   
-            <a href="https://drive.google.com/file/d/1Xxpv4AA5-hWleF7XxKxVWm8X0qj7ezV7/view?usp=sharing" class="btn" target="_blank">Descargar CV</a> 
-            <a href="https://github.com/AlexArce2000" class="btn-github" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            
+            <span class="badge">Disponible para nuevos proyectos</span>
+            <h1>Alexis Arce</h1>
+            <h2 class="type-text">Especializado en <span id="typed"></span></h2>
+            <p class="hero-desc">Soy estudiante de Ingeniería en Informática con interés en el desarrollo de software y
+                la construcción de sistemas eficientes. Me gusta construir aplicaciones web completas, trabajando tanto
+                en el backend como en el frontend para crear soluciones funcionales, claras y escalables.
+            </p>
+            <div class="hero-btns">
+                <a href="https://drive.google.com/file/d/1Xxpv4AA5-hWleF7XxKxVWm8X0qj7ezV7/view?usp=sharing"
+                    target="_blank" class="btn btn-primary">Descargar CV</a>
+                <a href="https://github.com/AlexArce2000" target="_blank" class="btn btn-primary"><i
+                        class="fab fa-github"></i> GitHub</a>
+            </div>
         </div>
     </header>
 
-    <!-- Sección "Sobre mí" -->
-    <section id="about">
+    <section id="experience" class="section">
         <div class="container">
-            <h2>Sobre mí</h2>
-            <p>Soy estudiante de Ingeniería en Informática con una profunda pasión por la tecnología y la resolución de problemas complejos. A lo largo de mi formación académica, he adquirido experiencia en el desarrollo de soluciones tecnológicas. Mi objetivo es seguir aprendiendo y mejorando mis habilidades en diferentes lenguajes de programación, bases de datos y herramientas de desarrollo.
-                Me considero una persona proactiva, con un enfoque en la mejora continua y el trabajo en equipo.</p>
+            <h2 class="section-title">Trayectoria Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Marzo 2025 — Presente</div>
+                    <div class="timeline-content">
+                        <h3>Konecta</h3>
+                        <span class="job-title">Software Developer | Web Applications & VAS Solutions</span>
+                        <p>
+                            Desarrollo de aplicaciones web y sistemas de gestión internos.
+                            Implementación de servicios VAS, automatización de procesos y
+                            soporte técnico especializado para optimización de operaciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Sección de Habilidades -->
-    <section id="skills">
+    <section id="skills" class="section alt-bg">
         <div class="container">
-            <h2>Skills & Tecnologías:</h2>
-            <table>
-            <tbody>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Java</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=13679&format=png&color=000000"> 
-                </div> 
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Python</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/color/2x/python.png"> 
-                </div>    
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>C</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=40670&format=png&color=000000"> 
+            <h2 class="section-title">Stack Tecnológico</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Lenguajes & Frameworks</h4>
+
+                    <div class="skill-items">
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=13679&format=png&color=000000">
+                            <span>Java</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/color/2x/python.png">
+                            <span>Python</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=40670&format=png&color=000000">
+                            <span>C</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000">
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000">
+                            <span>TypeScript</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=j9DnICNnlhGk&format=png&color=000000">
+                            <span>Angular</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=90519&format=png&color=000000">
+                            <span>Spring Boot</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=qV-JzWYl9dzP&format=png&color=000000">
+                            <span>Django</span>
+                        </div>
+
+                    </div>
                 </div>
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>JavaScript</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"> 
-                </div>
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Git</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/ios-glyphs/2x/github-2.png"> 
-                </div>
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>SQL</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/ios-filled/2x/sql.png"> 
-                </div>    
-            </td>
-            <tr>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Bash</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=8gWOBXY72Osj&format=png&color=000000"> 
-                </div>    
-            </td>
-        
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>HTML</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/color/2x/html-5.png"> 
-                </div>    
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>CSS</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"> 
-                </div>    
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Postgresql</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=38561&format=png&color=000000"> 
-                </div>    
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Spring boot</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=90519&format=png&color=000000"> 
-                </div>    
-            </td>
-            <td align="center" width="20%">
-                <div class="skill-box">
-                    <span><b><center>Django</center></b></span> 
-                    <img height=65px src="https://img.icons8.com/?size=100&id=qV-JzWYl9dzP&format=png&color=000000"> 
-                </div>    
-            </td>
-  
-            
-            </tbody>
-            </table>
-        </div>
-    </section>
-    <!-- Sección de Proyectos -->
-    <section id="projects">
-        <h2>Mis Proyectos</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide project-card">
-                    <h3>CMS</h3>
-                    <p>Este proyecto es un Content Management System (CMS) desarrollado con Django y Bootstrap como parte de la materia Ingeniera de Software. El sistema permite gestionar contenidos de manera eficiente, proporcionando funcionalidades de administración, visualización y edición de datos a través de una interfaz amigable.</p>
-                    <a href='https://github.com/AlexArce2000/cms.git' target='_blank'><img src='https://i.postimg.cc/SNT6j6TQ/cms1.png' border='0' alt='cms1'/></a>
-                </div>
-                <div class="swiper-slide project-card">
-                    <h3>BookBase</h3>
-                    <p>Aplicación web que permite a los usuarios gestionar su colección de libros con facilidad. Desarrollada con Angular en el frontend y Spring Boot en el backend, ofrece todas las operaciones CRUD esenciales: crear, leer, actualizar y eliminar.</p>
-                    <a href='https://github.com/AlexArce2000/crud-angular-spring' target='_blank'><img src='https://i.postimg.cc/3xhztHjb/bookbase1.png' border='0' alt='bookbase1'/></a>
-                </div>
-                <div class="swiper-slide project-card">
-                    <h3>Reloj</h3>
-                    <p>Este proyecto es un reloj que simula a una estructura del lenguaje C está creado con HTML, CSS y JavaScript. Su propósito es mostrar la hora actual en tiempo real, actualizándose cada segundo.</p>
-                    <a href='https://alexarce2000.github.io/reloj-struct/' target='_blank'><img src='https://i.postimg.cc/DymTXXnM/image.png' border='0' alt='reloj'/></a>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-database"></i> Infraestructura & Tools</h4>
+
+                    <div class="skill-items">
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/ios-filled/2x/sql.png">
+                            <span>SQL</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=38561&format=png&color=000000">
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000">
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=hYoELNwniGhi&format=png&color=000000">
+                            <span>MySQL</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/ios-glyphs/2x/github-2.png">
+                            <span>Git</span>
+                        </div>
+
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=8gWOBXY72Osj&format=png&color=000000">
+                            <span>Bash/Linux</span>
+                        </div>
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000">
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill">
+                            <img src="https://img.icons8.com/?size=100&id=61466&format=png&color=000000">
+                            <span>IntelliJ IDEA</span>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
-            <div style="text-align: left; margin-top: 10px; font-size: 0.88em; padding: 5px 10px 0 10px; color: #77a0c0;">
-                Para más proyectos en mi GitHub, visita el siguiente enlace:
-                <a href="https://github.com/AlexArce2000" target="_blank" class="btn" style="color: white;">Más proyectos</a>
-            </div>
-            
-
         </div>
     </section>
-    
 
-    <!-- Sección de Contacto -->
-    <section id="contact">
+    <section id="projects" class="section">
         <div class="container">
-            <h2>Contacto</h2>
-            <a href="mailto:alexisroarce2000@gmail.com" class="btn" target="_blank"><i class="fa-solid fa-envelope" href="mailto:alexisroarce2000@gmail.com" style="color: #77a0c0;font-size: 30px;padding: 10px;" title="Enviar un correo directamente"></i></a>
-            <a href="https://wa.me/595983958626" class="btn" target="_blank"><i class="fa-solid fa-phone" style="color: #77a0c0;font-size: 30px; padding: 10px;" title="Whatsapp"></i></a> 
-            <a href="https://www.instagram.com/alexisarce001" class="btn" target="_blank"><i class="fa-brands fa-instagram" style="color: #77a0c0;font-size: 30px; padding: 10px;" title="Instagram"></i></a>                
+            <h2 class="section-title">Proyectos Seleccionados</h2>
 
+            <!-- Contenedor principal de Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <a href="assets/chat-project/login-claro.PNG" data-fancybox="gallery-chat"
+                                    data-caption="Pantalla de inicio del Chat">
+                                    <img src="assets/chat-project/login-claro.PNG" alt="Preview">
+                                </a>
+
+                                <!-- Fotos adicionales ocultas (se verán solo al abrir la galería) -->
+                                <div style="display:none">
+                                        
+                                    <a href="assets/chat-project/login-oscuro.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Login Modo Oscuro"></a>
+                                        
+                                    <a href="assets/chat-project/Crear-sala.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Crear Salas"></a>
+                                    <a href="assets/chat-project/inicio-salas-publicas.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Inicio de Salas Públicas"></a>
+                                    <a href="assets/chat-project/inicio.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Inicio de Chat"></a>
+                                    <a href="assets/chat-project/unirse-sala-privada.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Unirse a Sala Privada"></a>    
+                                    <a href="assets/chat-project/sala.PNG" data-fancybox="gallery-chat"
+                                        data-caption="Sala Privada"></a>    
+
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-tags">Angular • Spring Boot • MongoDB • WebSockets</div>
+                                <h3>Multi-Chat Fullstack</h3>
+                                <p>Plataforma de chat en tiempo real con arquitectura híbrida de datos.
+                                    Gestiona usuarios con PostgreSQL/JWT y optimiza el historial de mensajes con
+                                    MongoDB,
+                                    logrando una comunicación instantánea y escalable.</p>
+                                <div class="project-links-group">
+                                    <a href="https://github.com/AlexArce2000/multi-chat-frontend" class="project-link"
+                                        target="_blank">
+                                        <i class="fab fa-github"></i> Front
+                                    </a>
+                                    <a href="https://github.com/AlexArce2000/multi-chat-backend" class="project-link"
+                                        target="_blank">
+                                        <i class="fab fa-github"></i> Back
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <a href="assets/LL1/inicio.PNG" data-fancybox="gallery-LL1"
+                                    data-caption="Pantalla de inicio del Chat">
+                                    <img src="assets/LL1/inicio.PNG" alt="Preview">
+                                </a>
+
+                                <!-- Fotos adicionales ocultas (se verán solo al abrir la galería) -->
+                                <div style="display:none">
+                                        
+                                    <a href="assets/LL1/inicio2.PNG" data-fancybox="gallery-LL1"
+                                        data-caption="Pantalla de inicio"></a>
+                                        
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-tags">Angular • Spring Boot • MongoDB • WebSockets</div>
+                                <h3>Multi-Chat Fullstack</h3>
+                                <p>Plataforma de chat en tiempo real con arquitectura híbrida de datos.
+                                    Gestiona usuarios con PostgreSQL/JWT y optimiza el historial de mensajes con
+                                    MongoDB,
+                                    logrando una comunicación instantánea y escalable.</p>
+                                <div class="project-links-group">
+                                    <a href="https://github.com/AlexArce2000/multi-chat-frontend" class="project-link"
+                                        target="_blank">
+                                        <i class="fab fa-github"></i> Front
+                                    </a>
+                                    <a href="https://github.com/AlexArce2000/multi-chat-backend" class="project-link"
+                                        target="_blank">
+                                        <i class="fab fa-github"></i> Back
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image"><img src="img/cms.jpg" alt=""></div>
+                            <div class="project-content">
+                                <div class="project-tags">Django • Bootstrap</div>
+                                <h3>CMS Enterprise</h3>
+                                <p>Sistema avanzado de gestión de contenidos con arquitectura modular.</p>
+                                <a href="https://github.com/AlexArce2000/cms.git" class="project-link">Ver Código <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image"><img src="img/bookbase.jpg" alt=""></div>
+                            <div class="project-content">
+                                <div class="project-tags">Angular • Spring Boot</div>
+                                <h3>BookBase Fullstack</h3>
+                                <p>Gestión bibliográfica utilizando microservicios y diseño responsive.</p>
+                                <a href="https://github.com/AlexArce2000/crud-angular-spring" class="project-link">Ver
+                                    Código <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 4: LL1 Parser -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image"><img src="img/ll1.jpg" alt=""></div>
+                            <div class="project-content">
+                                <div class="project-tags">Python • Compiladores</div>
+                                <h3>LL(1) Parser Visualizer</h3>
+                                <p>Herramienta educativa para visualización de análisis sintáctico.</p>
+                                <a href="https://github.com/AlexArce2000/LL1-Parser-Visualization"
+                                    class="project-link">Ver Código <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 5: Reloj Struct -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image"><img src="img/reloj.jpg" alt=""></div>
+                            <div class="project-content">
+                                <div class="project-tags">C • Estructuras</div>
+                                <h3>Reloj System Struct</h3>
+                                <p>Implementación en C para simulación de gestión de tiempo.</p>
+                                <a href="https://github.com/AlexArce2000/reloj-struct" class="project-link">Ver Código
+                                    <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botones de navegación -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Paginación (bolitas) -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-    <!-- Formulario de contacto -->
-    <div class="contact-form">
-        <h3>Enviame un mensaje</h3>
-        <form id="my-form" action="https://formspree.io/f/xanerlap" method="POST">
-          <label for="email">Email:</label>
-          <input type="email" name="email" required />
-  
-          <label for="message">Mensaje:</label>
-          <textarea name="message" rows="5" required></textarea>
-  
-          <button id="my-form-button" class="btn" type="submit">Enviar</button>
-          <p id="my-form-status"></p>
-        </form>
-      </div>
+    </section>
+    <section id="papers" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Investigación & Academia</h2>
+            <div class="paper-card">
+                <div class="paper-icon"><i class="fas fa-file-signature"></i></div>
+                <div class="paper-info">
+                    <span class="paper-label">Paper Publicado</span>
+                    <h3>Análisis de Optimización en Bases de Datos Relacionales</h3>
+                    <p>Un estudio técnico sobre la eficiencia de índices y planes de ejecución en entornos de alta
+                        demanda.</p>
+                    <a href="#" class="btn-text">Ver Publicación <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact" class="footer">
+        <h2>Hablemos.</h2>
+        <div class="container">
+            <p>Si deseas contactarme, no dudes en hacerlo.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/xanerlap" method="POST" class="main-form">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                    <textarea name="message" placeholder="¿En qué puedo ayudarte?" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="mailto:alexisroarce2000@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/595983958626"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/AlexArce2000"><i class="fab fa-github"></i></a>
+                </div>
+                <p>© 2025 Alexis Arce. Ingeniería en Informática.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script src="js/script.js"></script>
 </body>
+
 </html>
