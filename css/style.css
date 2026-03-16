@@ -984,6 +984,105 @@ body.dark-mode .project-card:hover {
     border-color: var(--primary);
     transform: translateY(-3px);
 }
+
+/* =========================================
+   ESTILO PROFESIONAL PARA TAGS Y TÍTULOS
+   ========================================= */
+
+/* 1. Contenedor de Tecnologías */
+.project-tags-pro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+}
+
+/* 2. Píldoras Minimalistas (Ghost Pills) */
+.tech-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 100px; /* Bordes totalmente redondeados */
+    border: 1px solid var(--border);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* El "punto" indicador tecnológico (toque muy premium) */
+.tech-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+    opacity: 0.5;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover en la tarjeta entera: ilumina sutilmente las etiquetas */
+.project-card:hover .tech-tag {
+    border-color: rgba(37, 99, 235, 0.3); /* Borde azul suave */
+}
+
+/* Hover individual en cada etiqueta */
+.tech-tag:hover {
+    border-color: var(--primary);
+    color: var(--text-main);
+    transform: translateY(-2px);
+    background: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tech-tag:hover::before {
+    background-color: var(--primary);
+    opacity: 1;
+    box-shadow: 0 0 8px var(--primary); /* Brillo tipo "en línea" */
+}
+
+/* 3. Título del Proyecto (Tipografía limpia) */
+.project-title-pro {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px; /* Tracking ajustado para look moderno */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Prepara el espacio para la flecha */
+    transition: color 0.3s ease;
+}
+
+/* 4. Flecha animada que aparece al hacer hover (Toque GitHub/Vercel) */
+.project-title-pro::after {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos al pasar el mouse por la tarjeta */
+.project-card:hover .project-title-pro {
+    color: var(--primary);
+}
+
+.project-card:hover .project-title-pro::after {
+    opacity: 1;
+    transform: translateX(0); /* La flecha se desliza hacia su lugar */
+}
+
+/* Ajuste específico para Modo Oscuro */
+body.dark-mode .tech-tag:hover::before {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
