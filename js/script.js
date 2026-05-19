@@ -2,11 +2,14 @@
 var typed = new Typed("#typed", {
     strings: ["Full Stack Developer", "Backend Developer", "Frontend Developer"],
     typeSpeed: 60,
-    backSpeed: 30,
-    backDelay: 2000,
-    loop: true
+    backSpeed: 40,
+    backDelay: 2500,
+    startDelay: 300,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+    smartBackspace: true,   /* no borra lo que comparten las strings */
 });
-
 // Lógica de Modo Oscuro / Claro
 const toggleSwitch = document.querySelector('#checkbox');
 const currentTheme = localStorage.getItem('theme');

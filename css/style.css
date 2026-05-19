@@ -321,10 +321,16 @@ input:checked+.slider:before {
     letter-spacing: -1px;
 }
 
-.type-text {
+ .type-text {
     font-size: 1.5rem;
     color: var(--text-muted);
     font-weight: 400;
+    min-height: 2.2rem;   /* reserva espacio fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;  /* evita que el texto parta en dos líneas */
+    gap: 0.3rem;
 }
 
 .hero-desc {
@@ -1083,7 +1089,36 @@ body.dark-mode .tech-tag:hover::before {
     background-color: var(--accent);
     box-shadow: 0 0 10px var(--accent);
 }
+
+.typed-cursor {
+     color: var(--primary);
+     font-weight: 300;
+     opacity: 1;
+     animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+     0%, 100% { opacity: 1; }
+     50%       { opacity: 0; }
+} 
+
 @media (max-width: 768px) {
+    .type-text {
+        font-size: 1.1rem;
+        white-space: normal;    /* permite wrap en pantallas pequeñas */
+        min-height: 3.2rem;     /* más alto porque puede ir en 2 líneas */
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;      /* ya lo tienes en 2.5rem, puedes bajar más */
+     }
+    .hero-desc {         
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -1122,35 +1157,69 @@ body.dark-mode .tech-tag:hover::before {
         /* Mostrar solo en móvil */
     }
 
+    /* REEMPLAZA el bloque .nav-links dentro del @media (max-width: 768px) */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        /* Escondido a la derecha */
-        width: 45%;
-        /* Ocupa el 80% del ancho */
+        width: 60%;
         height: 100vh;
-        background: rgba(185, 185, 185, 0.08);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background: rgba(15, 23, 42, 0.92);      /* ← fondo oscuro sólido */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2.5rem;
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
         z-index: 1000;
-        backdrop-filter: blur(10px);
+        border-left: 1px solid rgba(59, 130, 246, 0.2);   /* ← borde azul sutil */
     }
 
-    /* Clase que activaremos con JS */
     .nav-links.active {
         right: 0;
     }
 
+    /* Links visibles en ambos modos */
     .nav-links a {
         font-size: 1.2rem;
+        color: #f1f5f9 !important;              /* ← blanco siempre */
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding-bottom: 4px;
+        transition: color 0.3s ease;
+    }
+
+    /* Línea animada debajo al hover */
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent) !important;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-links .nav-contact-btn:hover {
+        background: var(--accent);
+    }
+
+    .nav-links .nav-contact-btn::after {
+        display: none;   /* sin línea debajo del botón */
     }
 
     /* Ajuste del logo para que no se vea apretado */
